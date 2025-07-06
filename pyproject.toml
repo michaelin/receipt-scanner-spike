@@ -1,0 +1,27 @@
+[project]
+name = "receipt-scanner-spike"
+version = "0.1.0"
+description = "A Python application for scanning receipts"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = []
+
+[project.scripts]
+receipt-scanner = "receipt_scanner.main:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/receipt_scanner"]
+
+[dependency-groups]
+dev = [
+    "black>=25.1.0",
+    "pytest>=8.4.1",
+]
+
+[tool.black]
+line-length = 88
+target-version = ['py313']
